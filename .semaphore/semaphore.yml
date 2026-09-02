@@ -27,6 +27,10 @@ blocks:
         - name: Test tool using github HTTPS clone
           commands:
             - bundle install
+        - name: test direct clone with proposed workaround
+          commands:
+            - git config --global http.version HTTP/1.1
+            - 'git clone https://github.com/semaphoreio/test-reports-rspec.git'
     dependencies: []
 after_pipeline:
   task:
