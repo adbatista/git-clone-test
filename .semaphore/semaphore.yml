@@ -10,6 +10,8 @@ fail_fast:
 auto_cancel:
   running:
     when: 'true'
+execution_time_limit:
+  minutes: 5
 global_job_config:
   prologue:
     commands:
