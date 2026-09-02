@@ -25,7 +25,8 @@ blocks:
           commands:
             - 'git clone https://github.com/semaphoreio/test-reports-rspec.git'
         - name: Test tool using github HTTPS clone
-          commands: []
+          commands:
+            - bundle install
     dependencies: []
 after_pipeline:
   task:
