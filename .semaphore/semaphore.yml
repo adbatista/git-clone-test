@@ -11,7 +11,7 @@ auto_cancel:
   running:
     when: 'true'
 execution_time_limit:
-  minutes: 2
+  minutes: 1
 global_job_config:
   prologue:
     commands:
@@ -23,7 +23,7 @@ blocks:
       jobs:
         - name: test direct HTTPS clone
           commands:
-            - 'git clone https://github.com/semaphoreio/test-reports-rspec.git'
+            - 'git clone https://github.com/semaphoreio/test-reports-rspec'
         - name: Test tool using github HTTPS clone
           commands:
             - bundle install
