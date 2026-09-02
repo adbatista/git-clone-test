@@ -11,7 +11,7 @@ auto_cancel:
   running:
     when: 'true'
 execution_time_limit:
-  minutes: 1
+  minutes: 2
 global_job_config:
   prologue:
     commands:
