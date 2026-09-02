@@ -5,13 +5,11 @@ agent:
     type: f1-standard-2
     os_image: ubuntu2404
 fail_fast:
-  stop:
-    when: branch != 'main'
+  cancel:
+    when: 'true'
 auto_cancel:
   running:
-    when: branch != 'main'
-  queued:
-    when: branch = 'main'
+    when: 'true'
 global_job_config:
   prologue:
     commands:
