@@ -1,0 +1,35 @@
+version: v1.0
+name: "\U0001F48E Ruby CI Pipeline"
+agent:
+  machine:
+    type: f1-standard-2
+    os_image: ubuntu2404
+fail_fast:
+  stop:
+    when: branch != 'main'
+auto_cancel:
+  running:
+    when: branch != 'main'
+  queued:
+    when: branch = 'main'
+global_job_config:
+  prologue:
+    commands:
+      - checkout
+      - sem-version ruby 3.2
+blocks:
+  - name: Test Github clone
+    task:
+      jobs:
+        - name: test direct HTTPS clone
+          commands:
+            - 'git clone https://github.com/semaphoreio/test-reports-rspec.git'
+        - name: Test tool using github HTTPS clone
+          commands: []
+    dependencies: []
+after_pipeline:
+  task:
+    jobs:
+      - name: "\U0001F4CA Merge Results"
+        commands:
+          - test-results gen-pipeline-report
