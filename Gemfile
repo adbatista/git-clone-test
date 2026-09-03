@@ -1,3 +1,3 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-gem "rails", github: "rails/rails", branch: "main"
+gem 'rails', '8.2.0.alpha', github: 'rails/rails'

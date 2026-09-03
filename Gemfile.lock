@@ -1,7 +1,6 @@
 GIT
   remote: https://github.com/rails/rails.git
-  revision: a3f09dc5380dd7623be5bc6b0419517f13f517b2
-  branch: main
+  revision: 2164c6c6f7fb91cc1caff5ee4b05931445de42ea
   specs:
     actioncable (8.2.0.alpha)
       actionpack (= 8.2.0.alpha)
@@ -239,7 +238,7 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
-  rails!
+  rails (= 8.2.0.alpha)!
 
 BUNDLED WITH
    2.6.9
