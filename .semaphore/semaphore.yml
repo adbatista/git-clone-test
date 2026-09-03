@@ -36,9 +36,13 @@ blocks:
           commands:
             - git config --global http.version HTTP/1.1
             - bundle install
-        - name: with proactive auth
+        - name: with proactive auth basic
           commands:
             - git config --global http.proactiveAuth basic
+            - 'git clone https://github.com/semaphoreio/test-reports-rspec'
+        - name: with proactive auth auto
+          commands:
+            - git config --global http.proactiveAuth auto
             - 'git clone https://github.com/semaphoreio/test-reports-rspec'
     dependencies: []
 after_pipeline:
