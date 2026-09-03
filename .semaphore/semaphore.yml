@@ -3,7 +3,7 @@ name: "\U0001F48E Ruby CI Pipeline"
 agent:
   machine:
     type: f1-standard-2
-    os_image: ubuntu2404
+    os_image: ubuntu2204
 fail_fast:
   cancel:
     when: 'true'
