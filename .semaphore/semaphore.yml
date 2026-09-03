@@ -16,6 +16,7 @@ global_job_config:
   prologue:
     commands:
       - checkout
+      - 'export GIT_TERMINAL_PROMPT=0 '
       - sem-version ruby 3.2
 blocks:
   - name: Test Github clone
@@ -31,6 +32,10 @@ blocks:
           commands:
             - git config --global http.version HTTP/1.1
             - 'git clone https://github.com/semaphoreio/test-reports-rspec.git'
+        - name: test tool using calling github clone with proposed workaround
+          commands:
+            - git config --global http.version HTTP/1.1
+            - bundle install
     dependencies: []
 after_pipeline:
   task:
